@@ -1,0 +1,10 @@
+.div1{
+    width: 50vw; 
+    height: 50vh;
+    background-color: red;
+}
+.div2{
+    width: 50%;
+    height: 50%;
+    background-color: rgb(14, 14, 202);
+}
