@@ -1,14 +1,17 @@
-.div1{
-    width: 50vw; 
-    height: 50vh;
-    background-color: red;
-
-    border-width: 5px 10px 2px 1px;
-    border-style: dotted;
-    border-color: blue;
-    border-radius: 20px;
-
-    /* border: 5px solid blue; */
-
-
+.firstpera{
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #d204a8;
+    font-weight: bold;
+    text-align: justify;
+    letter-spacing: 1px;
+    word-spacing: 5px;
+}
+.img{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("https://images.pexels.com/photos/45170/kittens-cat-cat-puppy-rush-45170.jpeg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
 }
