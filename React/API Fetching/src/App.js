@@ -7,22 +7,23 @@ function App() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/usrs")
-      .then((response) => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://jsonplaceholder.typicode.com/users"
+        );
         if (!response.ok) {
-          throw new Error("Network error!!");
+          throw new Error("Data fetch failed");
         }
-        return response.json();
-      })
-      .then((data) => {
-        setData(data);
-        console.log(data);
-        setLoading(false);
-      })
-      .catch((error) => {
+        const result = await response.json();
+        setData(result);
+      } catch (error) {
         setError(error.message);
+      } finally {
         setLoading(false);
-      });
+      }
+    };
+    fetchData();
   }, []);
 
   if (loading) {
@@ -34,10 +35,10 @@ function App() {
   }
   return (
     <div className="App">
-      <h1>Name of username:</h1>
-      <h3>
-        {data && data.map((user) => <div key={user.id}>{user.username}</div>)}
-      </h3>
+      <h1>Name of User and email:</h1>
+      <h2>
+        {data && data.map((user) => <div key={user.id}>{user.name} <br /> {user.email}</div>)}
+      </h2>
     </div>
   );
 }
